@@ -1,0 +1,334 @@
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.outer-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Mono", monospace;
+  background-color: #f6f8ff;
+}
+
+.inner-container {
+  max-width: 730px;
+  margin: 4rem 2rem;
+}
+
+.md-margin {
+  margin-right: 4.8rem;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.8rem;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-right: auto;
+}
+
+.change-mode-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.change-mode {
+  color: #697c9a;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  border-color: transparent;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.change-mode:hover {
+  cursor: pointer;
+  color: #222731;
+}
+
+/* SEARCH SECTION */
+
+.search-section {
+  position: relative;
+  margin-bottom: 2.4rem;
+  background-color: #fefefe;
+  border-radius: 15px;
+}
+
+.magnifying-glass {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+}
+
+.magnifying-glass path {
+  stroke: #0079ff;
+}
+
+.input {
+  width: 100%;
+  padding: 2.2rem 27rem 2.2rem 8rem;
+  border-radius: 10px;
+  border-color: transparent;
+  box-shadow: 0 4px 4px 0 hsl(0deg 0% 0% / 25%);
+  font-family: "Space Mono", monospace;
+  caret-color: #0079ff;
+}
+
+.input::placeholder {
+  font-size: 1.8rem;
+}
+
+.input:focus-within {
+  border-color: transparent;
+  outline: none;
+}
+
+.input[type="text"] {
+  font-size: 1.8rem;
+}
+
+.submit-btn {
+  font-family: "Space Mono", monospace;
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  font-size: 1.6rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 10px;
+  background-color: #0079ff;
+  color: #fff;
+  box-shadow: 0 4px 4px 0 hsl(0deg 0% 0% / 25%);
+  border-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #60abff;
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+}
+
+/* PROFILE SECTION */
+
+.profile-section {
+  background-color: #fefefe;
+  padding: 4rem 3.2rem 3.2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 2.8rem;
+  border-radius: 10px;
+  box-shadow: 0px 16px 30px -10px hsla(227, 46%, 51%, 0.2);
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.login {
+  font-size: 1.6rem;
+  color: #0079ff;
+}
+
+.created-at {
+  margin-top: 0.4rem;
+  font-size: 1.5rem;
+  color: #697c9b;
+}
+
+.avatar {
+  grid-row: 1/-1;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+.user-details {
+  grid-column: 2;
+  color: #4b6a9b;
+}
+
+.bio {
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+.repo-details-container {
+  background-color: #f6f8ff;
+  border-radius: 10px;
+  margin: 3.4rem 0;
+}
+
+.repo-details {
+  width: 100%;
+  padding: 1.2rem 0 1.2rem 4.8rem;
+  table-layout: fixed;
+}
+
+.thead th {
+  text-align: start;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.tbody {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.not-found::after {
+  content: "No results";
+  color: #f74646;
+  font-size: 1.5rem;
+  position: absolute;
+  font-weight: 700;
+  right: 21%;
+  top: 34%;
+}
+
+.hide {
+  opacity: 0;
+}
+
+/* OTHER-LIST */
+
+.other-lists {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.other-list {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.2rem;
+}
+
+.other-list-icon {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.other-list-link:link,
+.other-list-link:visited {
+  color: #4b6a9b;
+  text-decoration: none;
+}
+
+.other-list-link:hover,
+.other-list-link:active {
+  text-decoration: underline;
+}
+
+/* reusable DARK mode*/
+.dark-white {
+  color: #fff;
+}
+
+.dark-blue {
+  background-color: #1e2a47;
+}
+
+.dark-blue::placeholder {
+  color: #fff;
+}
+
+/* Change-mode */
+
+.dark-mode {
+  color: #fff;
+}
+
+.dark-mode:hover {
+  color: #90a4d4;
+}
+
+.other {
+  color: rgba(105, 124, 154, 0.7);
+}
+
+.other-link:link,
+.other-link:visited {
+  color: rgba(105, 124, 154, 0.7);
+}
+
+.other-link:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+
+/* Background outer container */
+
+.dark-container {
+  background-color: rgb(20, 29, 47);
+}
+
+.dark-link:link,
+.dark-link:visited {
+  color: #fff;
+}
+
+@media (max-width: 670px) {
+  .user-details {
+    grid-column: 1/-1;
+  }
+
+  .input {
+    padding-right: 0;
+    padding-left: 6.2rem;
+  }
+
+  .input::placeholder {
+    font-size: 1.5rem;
+  }
+
+  .magnifying-glass {
+    left: 4%;
+  }
+}
+
+@media (max-width: 550px) {
+  .other-lists {
+    grid-template-columns: 1fr;
+  }
+
+  :root {
+    height: auto;
+  }
+}
