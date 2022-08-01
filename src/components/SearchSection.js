@@ -38,7 +38,6 @@ export default function SearchSection({
         onClick={function () {
           handleEvent(searchString);
         }}
-        disabled={user ? false : true}
       >
         Search
       </button>
