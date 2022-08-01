@@ -8,28 +8,36 @@ export default function SearchSection({
   searchstring,
   user,
 }) {
+  const [searchString, setSearchString] = React.useState("");
+
+  function handleChange(e) {
+    setSearchString(e.target.value);
+  }
+
   return (
     <section className={"search-section  " + (!user && "not-found")}>
       <GrSearch className="magnifying-glass" />
       <input
         type="text"
         className={
-          "input " + ((currentMode === "LIGHT" && "dark-blue dark-white") || "")
+          "input " + ((currentMode === "false" && "dark-blue dark-white") || "")
         }
         placeholder="Search GitHub username..."
         onChange={handleChange}
         onKeyPress={function (e) {
           if (e.key === "Enter") {
-            handleEvent();
+            handleEvent(searchString);
           } else {
             return;
           }
         }}
-        value={searchstring}
+        value={searchString}
       />
       <button
         className="submit-btn"
-        onClick={handleEvent}
+        onClick={function () {
+          handleEvent(searchString);
+        }}
         disabled={user ? false : true}
       >
         Search

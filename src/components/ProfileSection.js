@@ -1,12 +1,13 @@
 import React from "react";
-import UserDetails from "./sub-sub-components/UserDeatils";
+
+import UserDetails from "./UserDetails";
 
 export default function ProfileSection({ currentMode, user }) {
   return (
     <section
       className={
         "profile-section " +
-        ((currentMode === "LIGHT" && "dark-blue ") || "") +
+        ((currentMode === "false" && "dark-blue ") || "") +
         (user !== " " && user ? "" : "hide")
       }
     >

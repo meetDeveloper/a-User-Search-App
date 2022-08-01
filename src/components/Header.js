@@ -6,19 +6,20 @@ export default function Header({ handleClick, currentMode }) {
     <header className="header">
       <h1
         className={
-          "title " + ((currentMode === "LIGHT" && "dark-white") || " ")
+          "title " + ((currentMode === "false" && "dark-white") || " ")
         }
       >
         devfinder
       </h1>
       <button
         className={
-          currentMode === "DARK" ? "change-mode" : "change-mode dark-mode"
+          currentMode === "true" ? "change-mode" : "change-mode dark-mode"
         }
         onClick={handleClick}
       >
-        {currentMode}
-        {currentMode === "DARK" ? (
+        {currentMode === "true" ? "DARK" : "LIGHT"}
+
+        {currentMode === "false" ? (
           <BsMoonFill className="change-mode-icon" />
         ) : (
           <BsFillSunFill className="change-mode-icon" />

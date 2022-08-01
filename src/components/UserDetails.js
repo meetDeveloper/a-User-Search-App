@@ -12,7 +12,7 @@ export default function UserDetails({ currentMode, user }) {
   return (
     <>
       <div
-        className={"user " + ((currentMode === "LIGHT" && "dark-white") || "")}
+        className={"user " + ((currentMode === "false" && "dark-white") || "")}
       >
         <div className="md-margin">
           <p className="name">{user.name || "null"}</p>
@@ -22,7 +22,7 @@ export default function UserDetails({ currentMode, user }) {
         </div>
         <span
           className={
-            "created-at " + ((currentMode === "LIGHT" && "dark-white") || "")
+            "created-at " + ((currentMode === "false" && "dark-white") || "")
           }
         >
           Joined <span>{dateArray[0] === "lid" ? "null" : date}</span>
@@ -31,14 +31,14 @@ export default function UserDetails({ currentMode, user }) {
 
       <div
         className={
-          "user-details " + ((currentMode === "LIGHT" && "dark-white") || "")
+          "user-details " + ((currentMode === "false" && "dark-white") || "")
         }
       >
         <p className="bio">{user.bio || "This profile has no bio"}</p>
         <div
           className={
             "repo-details-container " +
-            ((currentMode === "LIGHT" && "dark-container") || "")
+            ((currentMode === "false" && "dark-container") || "")
           }
         >
           <table className="repo-details">
@@ -51,7 +51,7 @@ export default function UserDetails({ currentMode, user }) {
             </thead>
             <tbody
               className={
-                "tbody " + ((currentMode === "LIGHT" && "dark-white") || "")
+                "tbody " + ((currentMode === "false" && "dark-white") || "")
               }
             >
               <tr>
@@ -74,7 +74,7 @@ export default function UserDetails({ currentMode, user }) {
               href="www.twitter.com"
               className={
                 "other-list-link twitter-name " +
-                ((currentMode === "LIGHT" &&
+                ((currentMode === "false" &&
                   user.twitter_username &&
                   "dark-link ") ||
                   "") +
@@ -90,7 +90,7 @@ export default function UserDetails({ currentMode, user }) {
               href="www.blog.com"
               className={
                 "other-list-link blog " +
-                ((currentMode === "LIGHT" && user.blog && "dark-link ") || "") +
+                ((currentMode === "false" && user.blog && "dark-link ") || "") +
                 (!user.blog && "other-link")
               }
             >

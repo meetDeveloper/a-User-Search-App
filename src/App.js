@@ -2,26 +2,30 @@ import React from "react";
 
 import Header from "./components/Header";
 import MainContent from "./components/MainContent.js";
-import Container from "./Container";
 
 export default function App() {
-  const [currentMode, setCurrentMode] = React.useState("DARK");
+  const [currentMode, setCurrentMode] = React.useState("true");
 
   function changeMode() {
     let set;
-    if (currentMode === "DARK") {
-      set = "LIGHT";
+    if (currentMode === "true") {
+      set = "false";
     } else {
-      set = "DARK";
+      set = "true";
     }
     setCurrentMode(set);
   }
   return (
-    <Container currentMode={currentMode}>
+    <div
+      className={
+        "outer-container " +
+        ((currentMode === "false" && "dark-container") || "")
+      }
+    >
       <div className="inner-container">
         <Header handleClick={changeMode} currentMode={currentMode} />
         <MainContent currentMode={currentMode} />
       </div>
-    </Container>
+    </div>
   );
 }
