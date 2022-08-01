@@ -56,6 +56,7 @@ export default function UserDetails({ currentMode, user }) {
             >
               <tr>
                 {repoDetailsArray.map((item, key) => {
+                  // eslint-disable-next-line react/no-array-index-key
                   return <td key={key}>{item}</td>;
                 })}
               </tr>
@@ -98,7 +99,7 @@ export default function UserDetails({ currentMode, user }) {
             </a>
           </li>
           <li className={"other-list " + (!user.company && "other")}>
-            <BsBuilding className={"other-list-link building"} />
+            <BsBuilding className="other-list-link building" />
             {user.company || "Not available"}
           </li>
         </ul>

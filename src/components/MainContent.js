@@ -13,7 +13,8 @@ export default function MainContent({ currentMode }) {
     request.open("GET", `https://api.github.com/users/${searchstring}`);
     request.send();
 
-    request.addEventListener("load", function () {
+    request.addEventListener("load", () => {
+      // eslint-disable-next-line no-shadow
       let user;
 
       if (request.status !== 200) {
